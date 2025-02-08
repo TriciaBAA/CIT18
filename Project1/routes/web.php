@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GreetController;
+use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,3 +13,6 @@ Route::get('/hello', function () {
 });
 
 Route::get('/greet', [GreetController::class, 'show']);
+
+Route::resource('tasks', TaskController::class);
+
